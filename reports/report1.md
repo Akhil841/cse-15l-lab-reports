@@ -3,11 +3,11 @@
 This page acts as both a lab report for the first two weeks of CSE 15L during Winter 2022 and as a tutorial to connect to UCSD's `ieng6` servers.
 ## Step 1: Installing VSCode
 Go to the [Visual Studio Code download homepage](https://code.visualstudio.com/Download) and click the link for the operating system that you are using. It should look like this:<br />
-![VSCode download page](lr1-vscode-download-page.PNG)
+![VSCode download page](lr1-vscode-download-page.png)
 This will be useful later for when we want to send and receive files with `ieng6`.
 ## Step 2: Remotely Connecting
 Before you can remotely connect, you first have to get your course-specific account by logging into [the ETS Account Lookup page](https://sdacs.ucsd.edu/~icc/index.php). After entering your username (which is your e-mail address, without the @ucsd.edu part) and student ID (which should begin with either an 'A' or a 'U', and be followed by 8 digits), you should be taken to a screen that looks like this:<br />
-![ETS account details](lr1-ets-username.PNG)
+![ETS account details](lr1-ets-username.png)
 Keep note of the account name that begins with `cs15`, as that is the one that is relevant to this course. It should be of the format `cs15lwi22zzz`, where `zzz` is three random letters. In my case, it was `aul`.<br /><br />
 Then, you need to [install OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse), so that you can actually connect to the `ieng6` server.<br><br>
 Now, enter VSCode and open a new terminal by clicking `Terminal`, and then `New Terminal`. In the resulting terminal that opens, enter
@@ -16,7 +16,7 @@ ssh cs15lwi22zzz@ieng6.ucsd.edu
 ```
 where `zzz` is the three random letters in your account username. It should ask you if you want to continue connecting since you are trying to connect to an unknown host, to which you should enter `y` if you are interesting in using the `ieng6` servers. Enter `n` otherwise to terminate the ssh connection. It will then ask you for your password, to which you should enter your account's password (the one you just reset to).<br /><br />
 You should then be taken to a Linux interface that looks like this:
-![ieng6 ssh interface](lr1-ssh-connect.PNG)
+![ieng6 ssh interface](lr1-ssh-connect.png)
 ## Step 4: Trying Some Commands
 Now that you're here, try using some Linux commands! If you don't know many linux commands, you can try the following:<br />
 Command | Output
@@ -29,7 +29,7 @@ Command | Output
 `touch`|Creates an empty file with the provided file name parameter. Does nothing without a parameter, you must use `touch <filename>` to properly use it.
 `rm`|Removes the given files specified in the parameters. This means that it does nothing by itself, you have to use `rm <filename1> <filename2>` and so on and so forth. To make it remove all files in a given directory recursively, you can use `rm -rf <directory1> <directory2>...`</table>
 For example, when I use `ls -a` in my home directory, I get the following:
-![Using ls on the ieng6 server](lr1-ls.PNG)
+![Using ls on the ieng6 server](lr1-ls.png)
 Notice how visible files are light green, hidden files are dark green, and directories are blue.
 ## Step 5: Copying Files From Your Computer To The `ieng6` Server
 You can copy files from your computer to the `ieng6` server! This is done by using the `scp` command. To test this, first create a file by the name of `adventurer.txt` (because it's travelling from your PC to the `ieng6` server!) and save it into your command line directory. Then, in the command line, enter
@@ -41,9 +41,9 @@ where `zzz` are the three random letters in your account name. The `:~/` indicat
 ssh cs15lwi22zzz@ieng6.ucsd.edu
 ```
 into the command line and entering your password. To check if the file is there, enter `ls -a`:
-![adventurer.txt travelled from my PC to the ieng6 server!](lr1-scp.PNG)
+![adventurer.txt travelled from my PC to the ieng6 server!](lr1-scp.png)
 and there it is! (I circled it in red) If we open it using `nano`, we can see
-![opening adventurer.txt in nano](lr1-nano-adventurer.PNG) that the contents of `adventurer.txt` went through!<br /><br />
+![opening adventurer.txt in nano](lr1-nano-adventurer.png) that the contents of `adventurer.txt` went through!<br /><br />
 This should work for any file, so if you feel like running your code on the server (since it has more computing power), you can send it over using `scp`!
 ## Step 6: Setting Up An SSH Key
 You're probably tired of entering your password every time you enter `ssh` or `scp` into the command line. And you've seen my screenshots, so you know that it can be avoided. Well, this section will explain exactly how to skip the password-entering step. You can use SSH keys to make the server immediately recognize you upon connecting by giving it your public SSH key and keeping your private one for yourself. So how do you make SSH keys?<br /><br />
@@ -91,7 +91,7 @@ Now, try logging in!
 ```
 ssh cs15lwi22zzz@ieng6.ucsd.edu
 ```
-![Logging in without entering the password](lr1-login.PNG)
+![Logging in without entering the password](lr1-login.png)
 This time, it didn't need your password!<br><br>
 You can now use `scp` and `ssh` without entering your password.
 ## Step 7: Optimizing Remote Running
@@ -119,7 +119,7 @@ and then enter
 ssh cs15lwi22zzz@ieng6.ucsd.edu "javac Interdimensional.java; java Interdimensional"
 ```
 The command will execute on the server, and then the output will be printed in the command line!
-![Executing a Java program on the server from the client](lr1-server-java.PNG)
+![Executing a Java program on the server from the client](lr1-server-java.png)
 The potential for this is high. You could write an extremely complex Java program on your computer, for example, and then execute it smoothly *with a single line of code* on the server! (instead of getting choppy framerates on your own PC, of course)
 
 This concludes my lab report.
