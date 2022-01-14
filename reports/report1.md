@@ -7,6 +7,8 @@
 - [Step 4: Copying Files From Your Computer To The `ieng6` Server](#step-4-copying-files-from-your-computer-to-the-ieng6-server)
 - [Step 5: Setting up an SSH Key](#step-5-setting-up-an-ssh-key)
 - [Step 6: Optimizing Remote Running](#step-6-optimizing-remote-running)
+</ul>
+
 ## Introduction
 This page acts as both a lab report for the first two weeks of CSE 15L during Winter 2022 and as a tutorial to connect to UCSD's `ieng6` servers.
 ## Step 1: Installing VSCode
