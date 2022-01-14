@@ -1,4 +1,12 @@
 # CSE 15L Lab Report 1
+## Table of Contents
+- [Introduction](#introduction)
+- [Step 1: Installing VSCode](#step-1-installing-vscode)
+- [Step 2: Remotely Connecting](#step-2-remotely-connecting)
+- [Step 3: Trying Some Commands](#step-3-trying-some-commands)
+- [Step 4: Copying Files From Your Computer To The `ieng6` Server](#step-4-copying-files-from-your-computer-to-the-ieng6-server)
+- [Step 5: Setting up an SSH Key](#step-5-setting-up-an-ssh-key)
+- [Step 6: Optimizing Remote Running](#step-6-optimizing-remote-running)
 ## Introduction
 This page acts as both a lab report for the first two weeks of CSE 15L during Winter 2022 and as a tutorial to connect to UCSD's `ieng6` servers.
 ## Step 1: Installing VSCode
@@ -17,7 +25,7 @@ ssh cs15lwi22zzz@ieng6.ucsd.edu
 where `zzz` is the three random letters in your account username. It should ask you if you want to continue connecting since you are trying to connect to an unknown host, to which you should enter `y` if you are interesting in using the `ieng6` servers. Enter `n` otherwise to terminate the ssh connection. It will then ask you for your password, to which you should enter your account's password (the one you just reset to).<br /><br />
 You should then be taken to a Linux interface that looks like this:
 ![ieng6 ssh interface](lr1-ssh-connect.png)
-## Step 4: Trying Some Commands
+## Step 3: Trying Some Commands
 Now that you're here, try using some Linux commands! If you don't know many linux commands, you can try the following:<br />
 Command | Output
 --------|--------
@@ -31,7 +39,7 @@ Command | Output
 For example, when I use `ls -a` in my home directory, I get the following:
 ![Using ls on the ieng6 server](lr1-ls.png)
 Notice how visible files are light green, hidden files are dark green, and directories are blue.
-## Step 5: Copying Files From Your Computer To The `ieng6` Server
+## Step 4: Copying Files From Your Computer To The `ieng6` Server
 You can copy files from your computer to the `ieng6` server! This is done by using the `scp` command. To test this, first create a file by the name of `adventurer.txt` (because it's travelling from your PC to the `ieng6` server!) and save it into your command line directory. Then, in the command line, enter
 ```
 scp adventurer.txt cs15lwi22zzz@ieng6.ucsd.edu:~/
@@ -45,7 +53,7 @@ into the command line and entering your password. To check if the file is there,
 and there it is! (I circled it in red) If we open it using `nano`, we can see
 ![opening adventurer.txt in nano](lr1-nano-adventurer.png) that the contents of `adventurer.txt` went through!<br /><br />
 This should work for any file, so if you feel like running your code on the server (since it has more computing power), you can send it over using `scp`!
-## Step 6: Setting Up An SSH Key
+## Step 5: Setting Up An SSH Key
 You're probably tired of entering your password every time you enter `ssh` or `scp` into the command line. And you've seen my screenshots, so you know that it can be avoided. Well, this section will explain exactly how to skip the password-entering step. You can use SSH keys to make the server immediately recognize you upon connecting by giving it your public SSH key and keeping your private one for yourself. So how do you make SSH keys?<br /><br />
 You first need to enter
 ```
@@ -94,7 +102,7 @@ ssh cs15lwi22zzz@ieng6.ucsd.edu
 ![Logging in without entering the password](lr1-login.png)
 This time, it didn't need your password!<br><br>
 You can now use `scp` and `ssh` without entering your password.
-## Step 7: Optimizing Remote Running
+## Step 6: Optimizing Remote Running
 Did you know that `ssh` can be used to execute commands directly, not just to log in? For example, if you enter
 ```
 ssh cs15lwi22zzz@ieng6.ucsd.edu "dir -a"
