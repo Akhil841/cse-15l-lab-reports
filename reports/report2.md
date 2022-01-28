@@ -1,6 +1,10 @@
 # CSE 15L Lab Report 2
 ## Table of Contents
-## Commit 1: "Fixed improperly formatted links problem"
+- [Commit 1](#commit-1)
+- [Commit 2](#commit-2)
+- [Commit 3](#commit-3)
+<h2 id="commit-1">Commit 1: "Fixed improperly formatted links problem"</h2>
+
 [Link to commit diff](https://github.com/Akhil841/markdown-parse/commit/f2a036d1bebd40745a059dc1b44a365ef4e38051)<br>
 An image of this commit diff is below:
 ![Image of commit diff](lr2-commit-diff-1.png)<br>
@@ -8,7 +12,8 @@ An image of this commit diff is below:
 An image of the symptom of the failure-inducing input is below:
 ![Failure-inducing input](lr2-commit-1-symptom.png)<br>
 The bug that this commit seeks to fix is that if the program cannot find any more square brackets or parentheses (and only finds text), it constantly sets `currentIndex` to `-1`, and since the while loop operates with condition `currentIndex < markdown.length()`, the loop will never end. The failure-inducing input addresses this by having lots of parentheses and square brackets followed by text. The symptom of this bug is that when the program is run, it shows black text forever, until the program is forcefully terminated by the user entering `Ctrl+C`. We fixed this problem by making the while loop end if any of `nextOpenBracket`, `nextCloseBracket`, `openParen`, or `closeParen` are `-1`.
-## Commit 2: "Square and circle brackets (sic) can be in the hyperlink text"
+<h2 id="commit-2"> Commit 2: "Square and circle brackets (sic) can be in the hyperlink text"</h2>
+
 [Link to commit diff](https://github.com/Akhil841/markdown-parse/commit/fa7f0188d608d5f173a6b7af8cff70c97caf7c10)<br>
 An image of this commit diff is below:
 ![Image of commit diff](lr2-commit-diff-2.png)<br>
@@ -16,7 +21,8 @@ An image of this commit diff is below:
 An image of the symptom of the failure-inducing input is below:
 ![Failure-inducing input](lr2-commit-2-symptom.png)<br>
 The bug that this commit seeks to fix is that if a hyperlink's text contains the characters `[`, `]`, or `(`, the corresponding scraped link will be meaningless garbage. The failure-inducing input addresses this problem by containing a hyperlink whose text contains `[`, `]`, *and* `(`. The symptom image above demonstrates this failure, where the input `[he[](llo](ahdjfads.com)` returns `llo](ahdjfads.com`, which is not a valid URL, instead of the expected `ahdjfads.com`. We fixed this problem by checking if the string determined to be a link contains the character `(`, in which case the link is determined to start at the character *after* the `(`.
-## Commit 3: "No longer adds images to list of links"
+<h2 id="commit-3">Commit 3: "No longer adds images to list of links"</h2>
+
 [Link to commit diff](https://github.com/Akhil841/markdown-parse/commit/af2cc7de7bedf446d633befae5b5950ffbdc803f)<br>
 An image of this commit diff is below:
 ![Image of commit diff](lr2-commit-diff-3.png)
