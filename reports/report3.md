@@ -21,7 +21,7 @@ It's the file named `id_rsa_github`.
 ## Using `git` commands from `ieng6`
 I added [this](https://github.com/Akhil841/cse-15l-lab-reports/blob/master/reports/lr3-commited-from-ieng6.md) file to the repository from `ieng6`.<br>
 I first commited the file locally:
-![local commit of markdown file](lr3-github-commit-file.png)
+![local commit of markdown file](lr3-github-commit-file.png)<br>
 I then pushed it to the repository:<br>
 ![pushing to repo](lr3-github-push-file.png)
 ## Commit link
