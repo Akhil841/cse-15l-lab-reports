@@ -4,4 +4,6 @@ Here lies Akhil's lab reports for CSE 15L.
 
 [Report 2](./reports/report2.md)
 
+[Report 3](./reports/report3.md)
+
 [Check this out!](!!!.md)
