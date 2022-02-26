@@ -6,4 +6,6 @@ Here lies Akhil's lab reports for CSE 15L.
 
 [Report 3](./reports/report3.md)
 
+[Report 4](./reports/lab-report-4-week-8.md)
+
 [Check this out!](!!!.md)
